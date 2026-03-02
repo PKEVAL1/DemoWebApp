@@ -1,0 +1,17 @@
+@page
+@model DemoWebApp.Pages.ErrorModel
+@{
+    ViewData["Title"] = "Error";
+}
+
+<div class="error-section">
+    <h1 class="error-title">⚠️ Something went wrong</h1>
+    @if (Model.ShowRequestId)
+    {
+        <p class="error-request-id">
+            <strong>Request ID:</strong> <code>@Model.RequestId</code>
+        </p>
+    }
+    <p>An unexpected error occurred. Please try again or contact support.</p>
+    <a href="/" class="btn-primary">← Back to Home</a>
+</div>

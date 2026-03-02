@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="DemoWebApp – ASP.NET Core 8 sample application for Azure DevOps CI/CD learning." />
+    <title>@(ViewData["Title"] != null ? ViewData["Title"] + " – " : "")DemoWebApp</title>
+
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="icon" type="image/x-icon" href="~/favicon.ico" />
+</head>
+<body>
+    <header class="site-header">
+        <nav class="nav-bar">
+            <a class="nav-brand" href="/">
+                <span class="brand-icon">⚡</span>
+                DemoWebApp
+            </a>
+            <ul class="nav-links">
+                <li><a href="/" class="nav-link">Home</a></li>
+                <li><a href="/health" class="nav-link" target="_blank">Health</a></li>
+                <li><a href="/api/info" class="nav-link" target="_blank">API Info</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        @RenderBody()
+    </main>
+
+    <footer class="site-footer">
+        <p>
+            DemoWebApp &copy; @DateTime.UtcNow.Year &nbsp;·&nbsp;
+            ASP.NET Core 8 &nbsp;·&nbsp;
+            <a href="https://azure.microsoft.com/en-us/products/devops" target="_blank" rel="noopener">Azure DevOps Ready</a>
+        </p>
+    </footer>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

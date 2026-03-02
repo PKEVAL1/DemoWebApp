@@ -1,0 +1,57 @@
+@page
+@model DemoWebApp.Pages.IndexModel
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="hero-section">
+    <div class="hero-content">
+        <div class="badge">Production Ready</div>
+        <h1 class="hero-title">@Model.AppInfo.ApplicationName</h1>
+        <p class="hero-subtitle">ASP.NET Core 8 · Razor Pages · Azure-Ready</p>
+    </div>
+</div>
+
+<div class="info-grid">
+    <div class="info-card">
+        <div class="info-icon">🌍</div>
+        <div class="info-label">Environment</div>
+        <div class="info-value env-badge env-@Model.AppInfo.Environment.ToLower()">
+            @Model.AppInfo.Environment
+        </div>
+    </div>
+
+    <div class="info-card">
+        <div class="info-icon">🕐</div>
+        <div class="info-label">Server Time (UTC)</div>
+        <div class="info-value">@Model.AppInfo.ServerTime.ToString("yyyy-MM-dd HH:mm:ss")</div>
+    </div>
+
+    <div class="info-card">
+        <div class="info-icon">🖥️</div>
+        <div class="info-label">Machine Name</div>
+        <div class="info-value mono">@Model.AppInfo.MachineName</div>
+    </div>
+
+    <div class="info-card">
+        <div class="info-icon">📦</div>
+        <div class="info-label">Version</div>
+        <div class="info-value mono">v@Model.AppInfo.Version</div>
+    </div>
+</div>
+
+<div class="endpoints-section">
+    <h2>Available Endpoints</h2>
+    <div class="endpoint-list">
+        <a class="endpoint-card" href="/health" target="_blank">
+            <span class="endpoint-method get">GET</span>
+            <span class="endpoint-path">/health</span>
+            <span class="endpoint-desc">Health Check Status</span>
+        </a>
+        <a class="endpoint-card" href="/api/info" target="_blank">
+            <span class="endpoint-method get">GET</span>
+            <span class="endpoint-path">/api/info</span>
+            <span class="endpoint-desc">Application Info (JSON)</span>
+        </a>
+    </div>
+</div>
