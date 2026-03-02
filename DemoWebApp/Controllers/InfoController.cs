@@ -28,7 +28,7 @@ namespace DemoWebApp.Controllers
         {
             _logger.LogInformation("API /api/info called");
             var info = _appInfoService.GetAppInfo();
-
+            //Response
             return Ok(new
             {
                 applicationName = info.ApplicationName,
